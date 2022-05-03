@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%; /* 1rem = 10px */
+
+  --primary-color-1: hsla(209, 85%, 26%, 1);
+  --primary-color-2: hsla(209, 77%, 43%, 1);
+  --primary-color-3: hsla(206, 100%, 91%, 1);
+  --primary-color-4: hsla(206, 100%, 97%, 1);
+
+  --secondary-color-1: hsla(105, 100%, 5%, 1);
+  --secondary-color-2: hsla(210, 9%, 31%, 1);
+  --secondary-color-3: hsla(0, 0%, 98%, 1);
+  --secondary-color-4: hsla(0, 0%, 58%, 1);
+}
+
+body {
+  font-family: 'DM Sans';
+  font-size: 1.6rem;
+
+  text-align: center;
+}
+
+header {
+  width: 37.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4.1rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+  color: var(--primary-color-1);
+  margin-bottom: 1.6rem;
+}
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 130%;
+  margin-bottom: 2.4rem;
+}
+
+p {
+  font-size: 1.8rem;
+  line-height: 150%;
+  color: var(--secondary-color-1);
+  margin-bottom: 3.2rem;
+}
+
+button {
+  background: var(--primary-color-2);
+
+  border: none;
+  border-radius: 4rem;
+
+  margin-bottom: 6rem;
+  margin-right: auto;
+  margin-left: auto;
+
+  height: 6.2rem;
+  width: 26.3rem;
+
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  gap: 1.6rem; /* dar espacamento entre os itens */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
