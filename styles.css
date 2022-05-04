@@ -9,19 +9,25 @@
   font-size: 62.5%; /* 1rem = 10px */
 
   --primary-color-1: hsla(209, 85%, 26%, 1);
-  --primary-color-2: hsl(209, 77%, 43%, 1);
-  --primary-color-3: hsla(206, 100%, 91%, 1);
-  --primary-color-4: hsla(206, 100%, 97%, 1);
+  --primary-color-2: hsla(209, 77%, 43%, 1);
 
-  --secondary-color-1: hsla(105, 100%, 5%, 1);
+  --secondary-color-1: rgb(0, 0, 0);
   --secondary-color-2: hsla(210, 9%, 31%, 1);
-  --secondary-color-3: hsla(0, 0%, 98%, 1);
-  --secondary-color-4: hsla(0, 0%, 58%, 1);
 
-  --brand-beige: hsla(39, 100%, 97%);
-  --brand-light: hsla(204, 100%, 97%);
+  --brand-beige: hsl(39, 100%, 97%);
+  --brand-light: hsl(204, 100%, 97%);
 
+  --background-light: hsl(0, 0%, 98%);
   --nav-height: 7.2rem;
+
+  /* --primary-color-3: hsla(206, 100%, 91%, 1);
+     --primary-color-4: hsla(206, 100%, 97%, 1); 
+     --secondary-color-3: hsla(0, 0%, 98%, 1);
+     --secondary-color-4: hsla(0, 0%, 58%, 1); */
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -43,109 +49,14 @@ ul {
   list-style: none;
 }
 
+section {
+  padding-block: 10rem;
+}
+
 .wrapper {
   width: 37.5rem;
   margin-inline: auto;
   padding-inline: 2.4rem;
-}
-
-/*=========== Header =========== */
-
-header {
-  margin-top: calc(4.1rem + var(--nav-height));
-}
-
-header::before {
-  content: '';
-  width: 100%;
-  height: calc(108rem + var(--nav-height));
-  background-color: var(--brand-light);
-  display: block;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-header h4 {
-  font-size: 1.4rem;
-  color: var(--primary-color-1);
-  margin-bottom: 1.6rem;
-}
-
-header h1 {
-  font-size: 3.2rem;
-  line-height: 130%;
-  margin-bottom: 2.4rem;
-}
-
-header p {
-  font-size: 1.8rem;
-  line-height: 150%;
-  color: var(--secondary-color-1);
-  margin-bottom: 3.2rem;
-}
-
-header button {
-  background: var(--primary-color-2);
-
-  border: none;
-  border-radius: 4rem;
-
-  margin-bottom: 6rem;
-  margin-right: auto;
-  margin-left: auto;
-
-  height: 6.2rem;
-  width: 26.3rem;
-
-  color: #ffffff;
-  font-size: 1.4rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  gap: 1.6rem; /* dar espacamento entre os itens */
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-header img {
-  width: 26.4rem;
-  display: block;
-  margin-inline: auto;
-  object-position: 0 3.4rem;
-}
-
-.stats {
-  width: 32.7rem;
-  padding-block: 4rem;
-  margin-inline: auto;
-
-  background-color: var(--brand-beige);
-  border: 1px solid var(--brand-light);
-  border-radius: 0.6rem;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 6rem;
-}
-
-.stat h3 {
-  font-size: 4.8rem;
-  color: var(--secondary-color-1);
-  line-height: 130%;
-
-  margin-bottom: 0.4rem;
-}
-
-.stat p {
-  margin: 0;
-  color: var(--primary-color-1);
-  font-size: 1.6rem;
-  line-height: 150%;
 }
 
 /*=========== navigation =========== */
@@ -154,11 +65,12 @@ nav {
   display: flex;
 
   height: var(--nav-height);
+  width: 100vw;
 
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+
+  z-index: 100;
 }
 
 nav .wrapper {
@@ -169,11 +81,9 @@ nav .wrapper {
 
 nav.scroll {
   background-color: var(--primary-color-2);
-
-  width: 100vw;
 }
 
-nav.scroll svg:nth-child(1) path {
+nav.scroll .logo path {
   fill: white;
 }
 
@@ -187,6 +97,7 @@ nav button {
   cursor: pointer;
 }
 
+
 /*=========== Menu-Expanded =========== */
 
 body.menu-expanded {
@@ -195,7 +106,7 @@ body.menu-expanded {
 
 /* pegando todos os filhos do primeiro nivel EXCETO (:not(nv)) a class 'nav' */
 body.menu-expanded > :not(nav) {
-  display: none;
+  visibility: hidden;
 }
 
 .menu,
@@ -221,10 +132,16 @@ body.menu-expanded .menu {
   height: 100vh;
 
   padding: var(--nav-height);
+
+  transition: transform 350ms;
+  transform: translateY(0);
 }
 
 body.menu-expanded nav {
-  position: relative;
+}
+
+.menu {
+  transform: translateY(-100%);
 }
 
 .menu ul:nth-child(1) {
@@ -280,4 +197,146 @@ body.menu-expanded .logo path {
 
 body.menu-expanded button path {
   stroke: white;
+}
+
+/*=========== #HOME =========== */
+
+#home {
+  padding-top: calc(4.1rem + var(--nav-height));
+}
+
+#home::before {
+  content: '';
+  width: 100%;
+  height: calc(108rem + var(--nav-height));
+  background-color: var(--brand-light);
+  display: block;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#home h4 {
+  font-size: 1.4rem;
+  color: var(--primary-color-1);
+  margin-bottom: 1.6rem;
+}
+
+#home h1 {
+  font-size: 3.2rem;
+  line-height: 130%;
+  margin-bottom: 2.4rem;
+}
+
+#home p {
+  font-size: 1.8rem;
+  line-height: 150%;
+  color: var(--secondary-color-2);
+  margin-bottom: 3.2rem;
+}
+
+#home button {
+  background: var(--primary-color-2);
+
+  border: none;
+  border-radius: 4rem;
+
+  margin-bottom: 6rem;
+  margin-right: auto;
+  margin-left: auto;
+
+  height: 6.2rem;
+  width: 26.3rem;
+
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  gap: 1.6rem; /* dar espacamento entre os itens */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home img {
+  width: 26.4rem;
+  display: block;
+  margin-inline: auto;
+  object-position: 0 3.4rem;
+}
+
+#home .stats {
+  width: 32.7rem;
+  padding-block: 4rem;
+  margin-inline: auto;
+
+  background-color: var(--brand-beige);
+  border: 1px solid var(--brand-light);
+  border-radius: 0.6rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6rem;
+}
+
+#home .stat h3 {
+  font-size: 4.8rem;
+  color: var(--secondary-color-1);
+  line-height: 130%;
+
+  margin-bottom: 0.4rem;
+}
+
+#home .stat p {
+  margin: 0;
+  color: var(--primary-color-1);
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+
+/*=========== Services =========== */
+
+#services header h4 {
+  font-size: 1.4rem;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+
+  color: var(--primary-color-1);
+  text-transform: uppercase;
+
+  margin-bottom: 1.6rem;
+}
+
+#services header h2 {
+  font-size: 3rem;
+  line-height: 3.9rem;
+  text-align: center;
+
+  color: var(--secondary-color-1);
+
+  margin-bottom: 6rem;
+}
+
+#services .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+#services .card {
+  padding: 2.4rem;
+  text-align: left;
+
+  background: white;
+
+  border: 1px solid var(--brand-light);
+  border-radius: 0.6rem;
+}
+
+#services .card h3 {
+  margin-block: 1.6rem;
 }
