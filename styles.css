@@ -8,20 +8,22 @@
 :root {
   font-size: 62.5%; /* 1rem = 10px */
 
-  --primary-color-1: hsla(209, 85%, 26%, 1);
-  --primary-color-2: hsla(209, 77%, 43%, 1);
+  --heu: 290; /* 209 */
+
+  --primary-color-1: hsla(var(--heu), 85%, 26%, 1);
 
   --secondary-color-1: rgb(0, 0, 0);
   --secondary-color-2: hsla(210, 9%, 31%, 1);
 
   --brand-beige: hsl(39, 100%, 97%);
-  --brand-light: hsl(204, 100%, 97%);
-  --brand-dark: hsl(220, 100%, 14%);
+  --brand-light: hsl(calc(var(--heu) + 5), 100%, 97%);
+  --brand-dark: hsl(var(--heu), 100%, 14%);
 
   --background-light: hsl(0, 0%, 98%);
   --nav-height: 7.2rem;
 
-  /* --primary-color-3: hsla(206, 100%, 91%, 1);
+  /* --primary-color-2: hsla(209, 77%, 43%, 1);
+     --primary-color-3: hsla(206, 100%, 91%, 1);
      --primary-color-4: hsla(206, 100%, 97%, 1); 
      --secondary-color-3: hsla(0, 0%, 98%, 1);
      --secondary-color-4: hsla(0, 0%, 58%, 1); */
@@ -93,8 +95,14 @@ section .content p {
   color: var(--secondary-color-2);
 }
 
+.wrapper {
+  width: 37.5rem;
+  margin-inline: auto;
+  padding-inline: 2.4rem;
+}
+
 .button {
-  background: var(--primary-color-2);
+  background: var(--primary-color-1);
 
   border: none;
   border-radius: 4rem;
@@ -130,11 +138,31 @@ section .content p {
   justify-content: center;
 }
 
-.wrapper {
-  width: 37.5rem;
-  margin-inline: auto;
-  padding-inline: 2.4rem;
+/* ======== Custom colors ======== */
+
+#services .card circle {
+  fill: var(--brand-light);
 }
+
+#navigation .logo path[fill*="#1971C2"],
+#backToTopButton circle {
+  fill: var(--primary-color-1);
+}
+
+button.open-menu path[stroke*="#1970c2"],
+#contact li path {
+  stroke: var(--primary-color-1);
+}
+
+body.menu-expanded #navigation .logo path,
+#navigation.scroll .logo path {
+  fill: white;
+}
+
+#navigation.scroll button.open-menu path[stroke*="#1970c2"] {
+  stroke: white;
+}
+
 
 /*=========== navigation =========== */
 
@@ -157,15 +185,7 @@ nav .wrapper {
 }
 
 nav.scroll {
-  background-color: var(--primary-color-2);
-}
-
-nav.scroll .logo path {
-  fill: white;
-}
-
-nav.scroll button path {
-  stroke: white;
+  background-color: var(--primary-color-1);
 }
 
 nav button {
@@ -249,6 +269,13 @@ body.menu-expanded .menu {
 
   margin-top: 4.8rem;
   margin-bottom: 8rem;
+}
+
+.menu .button:hover {
+  background-color: var(--primary-color-1);
+  color: white;
+
+  filter: brightness(1.3);
 }
 
 body.menu-expanded .logo,
@@ -449,19 +476,14 @@ footer .social-links {
 
   opacity: 0;
   visibility: hidden;
+
+  transform: translateY(100%);
+  transition: 200ms;
 }
 
 #backToTopButton.show {
   opacity: 1;
   visibility: visible;
-}
 
-#backToTopButton svg {
-  width: 4rem;
-  height: 4rem;
-
-  padding: .8rem;
-
-  border-radius: 2rem;
-  background-color: var(--primary-color-1);
+  transform: translateY(0);
 }

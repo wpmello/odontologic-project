@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
   </head>
-  <body onscroll="onScroll()">
+  <body>
     <nav id="navigation">
       <div class="wrapper">
         <a class="logo" href="#home">
@@ -74,7 +74,9 @@
             <li><a onclick="closeMenu()" href="#about">Sobre</a></li>
           </ul>
 
-          <a class="button" href="#">Agende sua consulta</a>
+          <a onclick="closeMenu()" class="button" href="#contact"
+            >Agende sua consulta</a
+          >
 
           <ul class="social-links">
             <li>
@@ -288,15 +290,16 @@
           <div class="cards">
             <div class="card">
               <svg
-                width="12"
-                height="9"
-                viewBox="0 0 12 9"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
+                <circle cx="12" cy="12" r="12" fill="#DCE9E2" />
                 <path
-                  d="M11.091 1.18188L4.091 8.18188L0.90918 5.00007"
-                  stroke="#1971C2"
+                  d="M17.091 8.18182L10.091 15.1818L6.90918 12"
+                  stroke="#00856F"
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -312,15 +315,16 @@
 
             <div class="card">
               <svg
-                width="12"
-                height="9"
-                viewBox="0 0 12 9"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
+                <circle cx="12" cy="12" r="12" fill="#DCE9E2" />
                 <path
-                  d="M11.091 1.18188L4.091 8.18188L0.90918 5.00007"
-                  stroke="#1971C2"
+                  d="M17.091 8.18182L10.091 15.1818L6.90918 12"
+                  stroke="#00856F"
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -336,15 +340,16 @@
 
             <div class="card">
               <svg
-                width="12"
-                height="9"
-                viewBox="0 0 12 9"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
+                <circle cx="12" cy="12" r="12" fill="#DCE9E2" />
                 <path
-                  d="M11.091 1.18188L4.091 8.18188L0.90918 5.00007"
-                  stroke="#1971C2"
+                  d="M17.091 8.18182L10.091 15.1818L6.90918 12"
+                  stroke="#00856F"
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -360,15 +365,16 @@
 
             <div class="card">
               <svg
-                width="12"
-                height="9"
-                viewBox="0 0 12 9"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
+                <circle cx="12" cy="12" r="12" fill="#DCE9E2" />
                 <path
-                  d="M11.091 1.18188L4.091 8.18188L0.90918 5.00007"
-                  stroke="#1971C2"
+                  d="M17.091 8.18182L10.091 15.1818L6.90918 12"
+                  stroke="#00856F"
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -384,15 +390,16 @@
 
             <div class="card">
               <svg
-                width="12"
-                height="9"
-                viewBox="0 0 12 9"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
+                <circle cx="12" cy="12" r="12" fill="#DCE9E2" />
                 <path
-                  d="M11.091 1.18188L4.091 8.18188L0.90918 5.00007"
-                  stroke="#1971C2"
+                  d="M17.091 8.18182L10.091 15.1818L6.90918 12"
+                  stroke="#00856F"
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -408,15 +415,16 @@
 
             <div class="card">
               <svg
-                width="12"
-                height="9"
-                viewBox="0 0 12 9"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
+                <circle cx="12" cy="12" r="12" fill="#DCE9E2" />
                 <path
-                  d="M11.091 1.18188L4.091 8.18188L0.90918 5.00007"
-                  stroke="#1971C2"
+                  d="M17.091 8.18182L10.091 15.1818L6.90918 12"
+                  stroke="#00856F"
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -689,11 +697,29 @@
     </footer>
 
     <a id="backToTopButton" href="#home">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 19V5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M5 12L12 5L19 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        
+      <svg
+        width="40"
+        height="40"
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="20" cy="20" r="20" fill="#00856F" />
+        <path
+          d="M20 27V13"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M13 20L20 13L27 20"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
     </a>
 
     <!-- ScrollReveal Lib -->

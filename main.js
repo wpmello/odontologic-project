@@ -1,3 +1,7 @@
+// este trecho de código serve para tirar o 'erro' do console que chama/chamava o 'onScroll' no body antes mesmo do arquivo 'main.js' ser criado.
+window.addEventListener('scroll', onScroll)
+onScroll()
+
 function onScroll() {
   showNavOnScroll()
   showBackToTopButtonOnScroll()
